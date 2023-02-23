@@ -106,12 +106,14 @@ struct PokemonSubstruct0
     u16 filler;
 };
 
+// This substruct stores the move's info of a pokemon
 struct PokemonSubstruct1
 {
     u16 moves[MAX_MON_MOVES];
     u8 pp[MAX_MON_MOVES];
 };
 
+// This substruct stores the evs of a pokemon and othe small stuff
 struct PokemonSubstruct2
 {
     u8 hpEV;
@@ -128,6 +130,7 @@ struct PokemonSubstruct2
     u8 sheen;
 };
 
+// This substruct stores the ivs, catch data and other secondary stuff of a pokemon
 struct PokemonSubstruct3
 {
  /* 0x00 */ u8 pokerus;
@@ -186,6 +189,7 @@ union PokemonSubstruct
     u16 raw[NUM_SUBSTRUCT_BYTES / 2]; // /2 because it's u16, not u8
 };
 
+// Struct that saved pokemon personal data
 struct BoxPokemon
 {
     u32 personality;
@@ -208,6 +212,7 @@ struct BoxPokemon
     } secure;
 };
 
+// Struct of a pokemon that saves stats ok a pokemon
 struct Pokemon
 {
     struct BoxPokemon box;
@@ -249,6 +254,8 @@ enum {
     MON_SPR_GFX_MANAGERS_COUNT
 };
 
+
+// Struct for an opponent pokemon
 struct BattlePokemon
 {
     /*0x00*/ u16 species;
@@ -317,6 +324,10 @@ struct SpeciesInfo
             u8 noFlip : 1;
 };
 
+#define MOVE_CATEGORY_PHYSICAL 0
+#define MOVE_CATEGORY_SPECIAL 1
+#define MOVE_CATEGORY_STATUS 2
+
 struct BattleMove
 {
     u8 effect;
@@ -328,6 +339,7 @@ struct BattleMove
     u8 target;
     s8 priority;
     u8 flags;
+	u8 category;
 };
 
 #define SPINDA_SPOT_WIDTH 16

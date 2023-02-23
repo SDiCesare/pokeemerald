@@ -122,7 +122,7 @@ static const u8 sFontColorTable[][3] =
 
 static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
 {
-    { // Party mon 1
+    {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 3,
@@ -131,7 +131,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
         .paletteNum = 3,
         .baseBlock = 0x63,
     },
-    { // Party mon 2
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 1,
@@ -140,7 +140,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
         .paletteNum = 4,
         .baseBlock = 0xA9,
     },
-    { // Party mon 3
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 4,
@@ -149,7 +149,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
         .paletteNum = 5,
         .baseBlock = 0xDF,
     },
-    { // Party mon 4
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 7,
@@ -158,7 +158,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
         .paletteNum = 6,
         .baseBlock = 0x115,
     },
-    { // Party mon 5
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 10,
@@ -167,7 +167,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
         .paletteNum = 7,
         .baseBlock = 0x14B,
     },
-    { // Party mon 6
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 13,
@@ -176,7 +176,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
         .paletteNum = 8,
         .baseBlock = 0x181,
     },
-    [WIN_MSG] = {
+    {
         .bg = 2,
         .tilemapLeft = 1,
         .tilemapTop = 15,
@@ -190,7 +190,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
 
 static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
 {
-    { // Party mon 1
+    {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 1,
@@ -199,7 +199,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .paletteNum = 3,
         .baseBlock = 0x63,
     },
-    { // Party mon 2
+    {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 8,
@@ -208,7 +208,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .paletteNum = 4,
         .baseBlock = 0xA9,
     },
-    { // Party mon 3
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 1,
@@ -217,7 +217,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .paletteNum = 5,
         .baseBlock = 0xEF,
     },
-    { // Party mon 4
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 5,
@@ -226,7 +226,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .paletteNum = 6,
         .baseBlock = 0x125,
     },
-    { // Party mon 5
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 9,
@@ -235,7 +235,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .paletteNum = 7,
         .baseBlock = 0x15B,
     },
-    { // Party mon 6
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 13,
@@ -244,7 +244,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .paletteNum = 8,
         .baseBlock = 0x191,
     },
-    [WIN_MSG] = {
+    {
         .bg = 2,
         .tilemapLeft = 1,
         .tilemapTop = 15,
@@ -258,7 +258,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
 
 static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
 {
-    { // Party mon 1
+    {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 1,
@@ -267,7 +267,7 @@ static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
         .paletteNum = 3,
         .baseBlock = 0x63,
     },
-    { // Party mon 2
+    {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 8,
@@ -276,7 +276,7 @@ static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
         .paletteNum = 4,
         .baseBlock = 0xA9,
     },
-    { // Party mon 3
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 2,
@@ -285,7 +285,7 @@ static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
         .paletteNum = 5,
         .baseBlock = 0xEF,
     },
-    { // Party mon 4
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 5,
@@ -294,7 +294,7 @@ static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
         .paletteNum = 6,
         .baseBlock = 0x125,
     },
-    { // Party mon 5
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 9,
@@ -303,7 +303,7 @@ static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
         .paletteNum = 7,
         .baseBlock = 0x15B,
     },
-    { // Party mon 6
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 12,
@@ -312,7 +312,7 @@ static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
         .paletteNum = 8,
         .baseBlock = 0x191,
     },
-    [WIN_MSG] = {
+    {
         .bg = 2,
         .tilemapLeft = 1,
         .tilemapTop = 15,
@@ -326,7 +326,7 @@ static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
 
 static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
 {
-    { // Party mon 1
+    {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 2,
@@ -335,7 +335,7 @@ static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
         .paletteNum = 3,
         .baseBlock = 0x63,
     },
-    { // Party mon 2
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 3,
@@ -344,7 +344,7 @@ static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
         .paletteNum = 5,
         .baseBlock = 0xA9,
     },
-    { // Party mon 3
+    {
         .bg = 0,
         .tilemapLeft = 12,
         .tilemapTop = 6,
@@ -353,7 +353,7 @@ static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
         .paletteNum = 6,
         .baseBlock = 0xDF,
     },
-    { // Party mon 4
+    {
         .bg = 2,
         .tilemapLeft = 1,
         .tilemapTop = 11,
@@ -362,7 +362,7 @@ static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
         .paletteNum = 4,
         .baseBlock = 0x115,
     },
-    { // Party mon 5
+    {
         .bg = 2,
         .tilemapLeft = 12,
         .tilemapTop = 12,
@@ -371,7 +371,7 @@ static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
         .paletteNum = 7,
         .baseBlock = 0x16B,
     },
-    { // Party mon 6
+    {
         .bg = 2,
         .tilemapLeft = 12,
         .tilemapTop = 15,
@@ -658,8 +658,10 @@ struct
 } static const sCursorOptions[] =
 {
     [MENU_SUMMARY] = {gText_Summary5, CursorCb_Summary},
+	[MENU_NICKNAME] = {gText_Nickname, CursorCb_Nickname},
     [MENU_SWITCH] = {gText_Switch2, CursorCb_Switch},
-    [MENU_CANCEL1] = {gText_Cancel2, CursorCb_Cancel1},
+    [MENU_MOVES] = {gText_Moves_Menu, CursorCb_Moves},
+	[MENU_CANCEL1] = {gText_Cancel2, CursorCb_Cancel1},
     [MENU_ITEM] = {gText_Item, CursorCb_Item},
     [MENU_GIVE] = {gMenuText_Give, CursorCb_Give},
     [MENU_TAKE_ITEM] = {gText_Take, CursorCb_TakeItem},
@@ -689,7 +691,8 @@ struct
     [MENU_FIELD_MOVES + FIELD_MOVE_SECRET_POWER] = {gMoveNames[MOVE_SECRET_POWER], CursorCb_FieldMove},
     [MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK] = {gMoveNames[MOVE_MILK_DRINK], CursorCb_FieldMove},
     [MENU_FIELD_MOVES + FIELD_MOVE_SOFT_BOILED] = {gMoveNames[MOVE_SOFT_BOILED], CursorCb_FieldMove},
-    [MENU_FIELD_MOVES + FIELD_MOVE_SWEET_SCENT] = {gMoveNames[MOVE_SWEET_SCENT], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_SWEET_SCENT] = {gMoveNames[MOVE_SWEET_SCENT], CursorCb_FieldMove}
+	// Here goes the new action
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -705,7 +708,10 @@ static const u8 sPartyMenuAction_RegisterSummaryCancel[] = {MENU_REGISTER, MENU_
 static const u8 sPartyMenuAction_TradeSummaryCancel1[] = {MENU_TRADE1, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMMARY, MENU_CANCEL1};
 static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TOSS, MENU_CANCEL1};
-
+// Add here action menu actions
+/*
+static const u8 sPartyMenuAction_IvEvChange[] = {MENU_READ, MENU_TAKE_MAIL, MENU_CANCEL2};
+*/
 static const u8 *const sPartyMenuActions[] =
 {
     [ACTIONS_NONE]          = NULL,
@@ -722,6 +728,10 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_TRADE]         = sPartyMenuAction_TradeSummaryCancel1,
     [ACTIONS_SPIN_TRADE]    = sPartyMenuAction_TradeSummaryCancel2,
     [ACTIONS_TAKEITEM_TOSS] = sPartyMenuAction_TakeItemTossCancel,
+	// Add here menu associated with actions
+	/*
+	[ACTIONS_IV_EV_CHANGER] = sPartyMenuAction_IvEvChange
+	*/
 };
 
 static const u8 sPartyMenuActionCounts[] =
@@ -740,6 +750,10 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_TRADE]         = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel1),
     [ACTIONS_SPIN_TRADE]    = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel2),
     [ACTIONS_TAKEITEM_TOSS] = ARRAY_COUNT(sPartyMenuAction_TakeItemTossCancel)
+	// Add here menu associated sizes
+	/*
+	[ACTIONS_IV_EV_CHANGER] = ARRAY_COUNT(sPartyMenuAction_IvEvChange)
+	*/
 };
 
 static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =

@@ -24,13 +24,13 @@ enum {
 
 struct WindowTemplate
 {
-    u8 bg;
-    u8 tilemapLeft;
-    u8 tilemapTop;
+    u8 bg; // Default color?
+    u8 tilemapLeft; // Pixels from left
+    u8 tilemapTop; // Pixels from top
     u8 width;
     u8 height;
-    u8 paletteNum;
-    u16 baseBlock;
+    u8 paletteNum; // Index for BG_PLTT_ID
+    u16 baseBlock; // Base index size in memory(?)
 };
 
 #define DUMMY_WIN_TEMPLATE          \

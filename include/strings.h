@@ -518,6 +518,8 @@ extern const u8 gText_SpDef[];
 extern const u8 gText_Speed[];
 extern const u8 gText_Dash[];
 extern const u8 gText_Plus[];
+extern const u8 gText_Nickname[];
+extern const u8 gText_Moves_Menu[];
 
 //pokedex text
 extern const u8 gText_CryOf[];
@@ -3025,5 +3027,13 @@ extern const u8 gText_YourName[];
 extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
+
+// EV-IV Summary
+extern const u8 gText_EV[];
+extern const u8 gText_IV[];
+
+extern const u8 gText_MoveSpecial[];
+extern const u8 gText_MovePhisical[];
+extern const u8 gText_MoveStatus[];
 
 #endif // GUARD_STRINGS_H

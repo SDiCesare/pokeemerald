@@ -5459,7 +5459,7 @@ static void Contest_StartTextPrinter(const u8 *currChar, bool32 b)
     u8 speed;
 
     printerTemplate.currentChar = currChar;
-    printerTemplate.windowId = WIN_GENERAL_TEXT;
+    printerTemplate.windowId = 4;
     printerTemplate.fontId = FONT_NORMAL;
     printerTemplate.x = 0;
     printerTemplate.y = 1;
@@ -5485,7 +5485,7 @@ static void Contest_StartTextPrinter(const u8 *currChar, bool32 b)
         AddTextPrinter(&printerTemplate, speed, 0);
     }
 
-    PutWindowTilemap(WIN_GENERAL_TEXT);
+    PutWindowTilemap(4);
     Contest_SetBgCopyFlags(0);
 }
 
