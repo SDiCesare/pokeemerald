@@ -17,7 +17,6 @@ static bool8 HasSuperEffectiveMoveAgainstOpponents(bool8 noRng);
 static bool8 FindMonWithFlagsAndSuperEffective(u8 flags, u8 moduloPercent);
 static bool8 ShouldUseItem(void);
 
-// 3 Point
 static bool8 ShouldSwitchIfPerishSong(void)
 {
     if (gStatuses3[gActiveBattler] & STATUS3_PERISH_SONG
@@ -33,7 +32,6 @@ static bool8 ShouldSwitchIfPerishSong(void)
     }
 }
 
-// 4 Point
 static bool8 ShouldSwitchIfWonderGuard(void)
 {
     u8 opposingPosition;
@@ -118,7 +116,6 @@ static bool8 ShouldSwitchIfWonderGuard(void)
     return FALSE; // There is not a single Pokemon in the party that has a super effective move against a mon with Wonder Guard.
 }
 
-// 5 Point
 static bool8 FindMonThatAbsorbsOpponentsMove(void)
 {
     u8 battlerIn1, battlerIn2;
@@ -127,11 +124,9 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     s32 lastId; // + 1
     struct Pokemon *party;
     s32 i;
-	
-	// If we haven't an effective move, OR if we have one but a random numbero is not divisible by 3 we won't switch
+
     if (HasSuperEffectiveMoveAgainstOpponents(TRUE) && Random() % 3 != 0)
         return FALSE;
-	// If the last move used by the opponent is not valid, we shouldn't switch.
     if (gLastLandedMoves[gActiveBattler] == MOVE_NONE)
         return FALSE;
     if (gLastLandedMoves[gActiveBattler] == MOVE_UNAVAILABLE)
@@ -153,17 +148,15 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
         battlerIn2 = gActiveBattler;
     }
 
-	// We store the ability that should protect the mon from the last used move's type
     if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_FIRE)
         absorbingTypeAbility = ABILITY_FLASH_FIRE;
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_WATER)
         absorbingTypeAbility = ABILITY_WATER_ABSORB;
     else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].type == TYPE_ELECTRIC)
         absorbingTypeAbility = ABILITY_VOLT_ABSORB;
-    else // If we have no ability that can nullify the move, we won't switch
+    else
         return FALSE;
-	
-	// If the ability match, we won't switch (WTF WHY)
+
     if (gBattleMons[gActiveBattler].ability == absorbingTypeAbility)
         return FALSE;
 
@@ -184,13 +177,11 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     else
         party = gEnemyParty;
 
-	// We count the number of aviable pokemon for switch
     for (i = firstId; i < lastId; i++)
     {
         u16 species;
         u8 monAbility;
-		
-		// If the mon is invalid, we don't count it
+
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
             continue;
         if (GetMonData(&party[i], MON_DATA_SPECIES2) == SPECIES_NONE)
@@ -207,13 +198,11 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-		// If its not the first ability, its the second i guess XD
         if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) != 0)
             monAbility = gSpeciesInfo[species].abilities[1];
         else
             monAbility = gSpeciesInfo[species].abilities[0];
 
-		// If the ability match with the absorbing one, we have a 50% chance to perform a switch
         if (absorbingTypeAbility == monAbility && Random() & 1)
         {
             // we found a mon.
@@ -222,20 +211,16 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
             return TRUE;
         }
     }
-	// We have no mon to switch in
+
     return FALSE;
 }
 
-// 7 Points
 static bool8 ShouldSwitchIfNaturalCure(void)
 {
-	
-	// If the pokemon is asleep or does not have the ability Natural Cure, we won't switch
     if (!(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
         return FALSE;
     if (gBattleMons[gActiveBattler].ability != ABILITY_NATURAL_CURE)
         return FALSE;
-	// If the pokemon as less than half of hp, he won't switch
     if (gBattleMons[gActiveBattler].hp < gBattleMons[gActiveBattler].maxHP / 2)
         return FALSE;
 
@@ -270,7 +255,6 @@ static bool8 ShouldSwitchIfNaturalCure(void)
     return FALSE;
 }
 
-// 6 Point
 static bool8 HasSuperEffectiveMoveAgainstOpponents(bool8 noRng)
 {
     u8 opposingPosition;
@@ -442,7 +426,6 @@ static bool8 FindMonWithFlagsAndSuperEffective(u8 flags, u8 moduloPercent)
     return FALSE;
 }
 
-// 2 Point
 static bool8 ShouldSwitch(void)
 {
     u8 battlerIn1, battlerIn2;
@@ -453,7 +436,6 @@ static bool8 ShouldSwitch(void)
     s32 i;
     s32 availableToSwitch;
 
-	// If the pokemon its trapped in by an ability or move, we shouldn't switch
     if (gBattleMons[*(activeBattlerPtr = &gActiveBattler)].status2 & (STATUS2_WRAPPED | STATUS2_ESCAPE_PREVENTION))
         return FALSE;
     if (gStatuses3[gActiveBattler] & STATUS3_ROOTED)
@@ -467,7 +449,6 @@ static bool8 ShouldSwitch(void)
         if (IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_STEEL))
             return FALSE;
     }
-	// If we are in the arena we shouldn't switch
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
         return FALSE;
 
@@ -475,7 +456,6 @@ static bool8 ShouldSwitch(void)
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
     {
         battlerIn1 = *activeBattlerPtr;
-		// If we have no battler because it was fainter we calculate on the same battler
         if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(*activeBattlerPtr)))])
             battlerIn2 = *activeBattlerPtr;
         else
@@ -489,7 +469,6 @@ static bool8 ShouldSwitch(void)
 
     if (gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TOWER_LINK_MULTI))
     {
-		// If its a double link battle, we check what side of the battle have and set the party indexes
         if ((gActiveBattler & BIT_FLANK) == B_FLANK_LEFT)
             firstId = 0, lastId = PARTY_SIZE / 2;
         else
@@ -497,7 +476,6 @@ static bool8 ShouldSwitch(void)
     }
     else
     {
-		// All party indexes aviable in single battle
         firstId = 0, lastId = PARTY_SIZE;
     }
 
@@ -506,7 +484,6 @@ static bool8 ShouldSwitch(void)
     else
         party = gEnemyParty;
 
-	// We count how many pokemon we can switch with
     for (i = firstId; i < lastId; i++)
     {
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
@@ -548,7 +525,6 @@ static bool8 ShouldSwitch(void)
     return FALSE;
 }
 
-// Starting Point
 void AI_TrySwitchOrUseItem(void)
 {
     struct Pokemon *party;

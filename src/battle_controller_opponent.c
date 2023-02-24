@@ -124,7 +124,6 @@ static void (*const sOpponentBufferCommands[CONTROLLER_CMDS_COUNT])(void) =
     [CONTROLLER_MOVEANIMATION]            = OpponentHandleMoveAnimation,
     [CONTROLLER_PRINTSTRING]              = OpponentHandlePrintString,
     [CONTROLLER_PRINTSTRINGPLAYERONLY]    = OpponentHandlePrintSelectionString,
-	// AI Actions in battle
     [CONTROLLER_CHOOSEACTION]             = OpponentHandleChooseAction,
     [CONTROLLER_YESNOBOX]                 = OpponentHandleYesNoBox,
     [CONTROLLER_CHOOSEMOVE]               = OpponentHandleChooseMove,
@@ -1550,7 +1549,6 @@ static void OpponentHandleChooseMove(void)
     }
     else
     {
-		// The move is choosen by its index on the struct [0->3]
         u8 chosenMoveId;
         struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleBufferA[gActiveBattler][4]);
 
@@ -1568,7 +1566,6 @@ static void OpponentHandleChooseMove(void)
             case AI_CHOICE_FLEE:
                 BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_RUN, 0);
                 break;
-			// Strange Case(?) Maybe while on Repeat Effect => to check by forcing value of switch
             case 6:
                 BtlController_EmitTwoReturnValues(BUFFER_B, 15, gBattlerTarget);
                 break;
@@ -1586,9 +1583,9 @@ static void OpponentHandleChooseMove(void)
             }
             OpponentBufferExecCompleted();
         }
-        else // Move of wildmon
+        else
         {
-			u16 move;
+            u16 move;
             do
             {
                 chosenMoveId = Random() & 3;
