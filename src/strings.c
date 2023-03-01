@@ -1828,3 +1828,8 @@ const u8 gText_FontSmall[] =            _("{FONT_SMALL}");
 const u8 gText_FontShort[] =            _("{FONT_SHORT}");
 const u8 gText_TMCase_Blue[] =          _("{COLOR_HIGHLIGHT_SHADOW BLUE TRANSPARENT LIGHT_BLUE}{STR_VAR_2}");
 
+// Summary Menu
+const u8 gText_Nickname[] = _("NICKNAME");
+const u8 gText_Moves_Menu[] = _("CHANGE MOVES");
+const u8 gText_EV[] = _("(EVs) HP");
+const u8 gText_IV[] = _("(IVs) HP");
