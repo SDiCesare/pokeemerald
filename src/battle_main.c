@@ -4620,13 +4620,8 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
         holdEffectParam = ItemId_GetHoldEffectParam(gBattleMons[battler1].item);
     }
 
-    // badge boost
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
-        && FlagGet(FLAG_BADGE03_GET)
-        && GetBattlerSide(battler1) == B_SIDE_PLAYER)
-    {
-        speedBattler1 = (speedBattler1 * 110) / 100;
-    }
+	if (gBattleMons[battler1].item == ITEM_CHOICE_SCARF)
+		speedBattler1 = (150 * speedBattler1) / 100;
 
     if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
         speedBattler1 /= 2;
@@ -4638,7 +4633,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
         speedBattler1 = UINT_MAX;
 
     // check second battlerId's speed
-
+	
     speedBattler2 = (gBattleMons[battler2].speed * speedMultiplierBattler2)
                 * (gStatStageRatios[gBattleMons[battler2].statStages[STAT_SPEED]][0])
                 / (gStatStageRatios[gBattleMons[battler2].statStages[STAT_SPEED]][1]);
@@ -4653,14 +4648,9 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
         holdEffect = ItemId_GetHoldEffect(gBattleMons[battler2].item);
         holdEffectParam = ItemId_GetHoldEffectParam(gBattleMons[battler2].item);
     }
-
-    // badge boost
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
-        && FlagGet(FLAG_BADGE03_GET)
-        && GetBattlerSide(battler2) == B_SIDE_PLAYER)
-    {
-        speedBattler2 = (speedBattler2 * 110) / 100;
-    }
+	
+	if (gBattleMons[battler2].item == ITEM_CHOICE_SCARF)
+		speedBattler2 = (150 * speedBattler2) / 100;
 
     if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
         speedBattler2 /= 2;

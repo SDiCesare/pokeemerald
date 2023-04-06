@@ -2274,13 +2274,37 @@ const struct Item gItems[] =
         .name = _("CHOICE BAND"),
         .itemId = ITEM_CHOICE_BAND,
         .price = 100,
-        .holdEffect = HOLD_EFFECT_CHOICE_BAND,
+        .holdEffect = HOLD_EFFECT_CHOICE,
         .description = sChoiceBandDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
-
+	
+	[ITEM_CHOICE_SPECS] =
+    {
+        .name = _("CHOICE SPECS"),
+        .itemId = ITEM_CHOICE_SPECS,
+        .price = 100,
+        .holdEffect = HOLD_EFFECT_CHOICE,
+        .description = sChoiceSpecsDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+	
+	[ITEM_CHOICE_SCARF] =
+    {
+        .name = _("CHOICE SCARF"),
+        .itemId = ITEM_CHOICE_SCARF,
+        .price = 100,
+        .holdEffect = HOLD_EFFECT_CHOICE,
+        .description = sChoiceScarfDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+	
     [ITEM_KINGS_ROCK] =
     {
         .name = _("KING'S ROCK"),

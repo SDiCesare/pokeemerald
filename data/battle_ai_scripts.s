@@ -2324,11 +2324,11 @@ AI_CV_Trick_EffectsToEncourage:
 	.byte HOLD_EFFECT_CONFUSE_BITTER
 	.byte HOLD_EFFECT_CONFUSE_SOUR
 	.byte HOLD_EFFECT_MACHO_BRACE
-	.byte HOLD_EFFECT_CHOICE_BAND
+	.byte HOLD_EFFECT_CHOICE
 	.byte -1
 
 AI_CV_Trick_EffectsToEncourage2:
-	.byte HOLD_EFFECT_CHOICE_BAND
+	.byte HOLD_EFFECT_CHOICE
 	.byte -1
 
 AI_CV_ChangeSelfAbility:

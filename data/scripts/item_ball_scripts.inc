@@ -1,3 +1,9 @@
+Route102_EventScript_ItemChoice::
+	finditem ITEM_CHOICE_BAND
+	finditem ITEM_CHOICE_SPECS
+	finditem ITEM_CHOICE_SCARF
+	end
+
 Route102_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end

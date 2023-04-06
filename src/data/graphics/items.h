@@ -736,3 +736,11 @@ const u32 gItemIconPalette_MagmaEmblem[] = INCBIN_U32("graphics/items/icon_palet
 
 const u32 gItemIcon_OldSeaMap[] = INCBIN_U32("graphics/items/icons/old_sea_map.4bpp.lz");
 const u32 gItemIconPalette_OldSeaMap[] = INCBIN_U32("graphics/items/icon_palettes/old_sea_map.gbapal.lz");
+
+// Custom
+
+const u32 gItemIcon_ChoiceSpecs[] = INCBIN_U32("graphics/items/icons/choice_specs.4bpp.lz");
+const u32 gItemIconPalette_ChoiceSpecs[] = INCBIN_U32("graphics/items/icon_palettes/choice_specs.gbapal.lz");
+
+const u32 gItemIcon_ChoiceScarf[] = INCBIN_U32("graphics/items/icons/choice_scarf.4bpp.lz");
+const u32 gItemIconPalette_ChoiceScarf[] = INCBIN_U32("graphics/items/icon_palettes/choice_scarf.gbapal.lz");

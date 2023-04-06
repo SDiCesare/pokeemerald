@@ -1031,8 +1031,8 @@ u8 TrySetCantSelectMoveBattleScript(void)
         holdEffect = ItemId_GetHoldEffect(gBattleMons[gActiveBattler].item);
 
     gPotentialItemEffectBattler = gActiveBattler;
-
-    if (holdEffect == HOLD_EFFECT_CHOICE_BAND && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
+	
+    if (holdEffect == HOLD_EFFECT_CHOICE && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
     {
         gCurrentMove = *choicedMove;
         gLastUsedItem = gBattleMons[gActiveBattler].item;
@@ -1099,8 +1099,8 @@ u8 CheckMoveLimitations(u8 battlerId, u8 unusableMoves, u8 check)
         // Encore
         if (gDisableStructs[battlerId].encoreTimer && gDisableStructs[battlerId].encoredMove != gBattleMons[battlerId].moves[i])
             unusableMoves |= gBitTable[i];
-        // Choice Band
-        if (holdEffect == HOLD_EFFECT_CHOICE_BAND && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != gBattleMons[battlerId].moves[i])
+        // Choice Items
+        if (holdEffect == HOLD_EFFECT_CHOICE && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != gBattleMons[battlerId].moves[i])
             unusableMoves |= gBitTable[i];
     }
     return unusableMoves;

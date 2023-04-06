@@ -3850,7 +3850,12 @@ extern const u32 gItemIcon_MagmaEmblem[];
 extern const u32 gItemIconPalette_MagmaEmblem[];
 extern const u32 gItemIcon_OldSeaMap[];
 extern const u32 gItemIconPalette_OldSeaMap[];
-
+// Custom items
+extern const u32 gItemIcon_ChoiceSpecs[];
+extern const u32 gItemIconPalette_ChoiceSpecs[];
+extern const u32 gItemIcon_ChoiceScarf[];
+extern const u32 gItemIconPalette_ChoiceScarf[];
+// End Items
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u32 gItemIconPalette_ReturnToFieldArrow[];
 

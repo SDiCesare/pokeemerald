@@ -753,6 +753,16 @@ static const u8 sChoiceBandDesc[] = _(
     "power, but permits\n"
     "only that move.");
 
+static const u8 sChoiceSpecsDesc[] = _(
+    "Raises a move's\n"
+    "special power, but\n"
+	"permits only that move.");
+
+static const u8 sChoiceScarfDesc[] = _(
+    "Raises a pokemon's\n"
+    "speed, but permits\n"
+    "only one move.");
+
 static const u8 sKingsRockDesc[] = _(
     "A hold item that\n"
     "may cause flinching\n"
